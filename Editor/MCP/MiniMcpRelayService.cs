@@ -297,6 +297,11 @@ namespace MiniMCP.Editor
 
         public static bool TryNotifyAwaitedOperationCompletion(string payloadJson, out string operationId)
         {
+            return TryNotifyAwaitedOperationCompletion(RelayPort, payloadJson, out operationId);
+        }
+
+        public static bool TryNotifyAwaitedOperationCompletion(int relayPort, string payloadJson, out string operationId)
+        {
             operationId = string.Empty;
             if (string.IsNullOrWhiteSpace(payloadJson))
             {
@@ -310,7 +315,7 @@ namespace MiniMCP.Editor
 
             try
             {
-                var request = (HttpWebRequest)WebRequest.Create($"http://127.0.0.1:{RelayPort}/operation-complete");
+                var request = (HttpWebRequest)WebRequest.Create($"http://127.0.0.1:{relayPort}/operation-complete");
                 request.Method = "POST";
                 request.ContentType = "application/json; charset=utf-8";
                 request.Timeout = 450;

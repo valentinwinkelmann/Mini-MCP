@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,8 +11,14 @@ namespace MiniMCP.Editor
     {
         private const string SessionStoreKey = "MiniMCP.AwaitedOperations.Store";
         private const int MaxCompletedOperations = 20;
+        private const double InitialRelayRetryDelaySeconds = 1.0d;
+        private const double MaxRelayRetryDelaySeconds = 30.0d;
         private static readonly object Gate = new object();
         private static StoreData cachedStore;
+        private static bool isRelayDeliveryInFlight;
+        private static string deliveredOperationIdPendingCommit = string.Empty;
+        private static int consecutiveRelayDeliveryFailures;
+        private static DateTime nextRelayDeliveryAttemptUtc = DateTime.MinValue;
 
         static MiniMcpAwaitedOperationStore()
         {
@@ -148,17 +155,82 @@ namespace MiniMCP.Editor
 
         private static void OnEditorUpdate()
         {
+            string operationIdToCommit = string.Empty;
+
+            lock (Gate)
+            {
+                if (!string.IsNullOrWhiteSpace(deliveredOperationIdPendingCommit))
+                {
+                    operationIdToCommit = deliveredOperationIdPendingCommit;
+                    deliveredOperationIdPendingCommit = string.Empty;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(operationIdToCommit))
+            {
+                MarkCompletionDelivered(operationIdToCommit);
+            }
+
+            if (DateTime.UtcNow < nextRelayDeliveryAttemptUtc)
+            {
+                return;
+            }
+
             if (!TryBuildCompletionPayload(out var payloadJson))
             {
+                lock (Gate)
+                {
+                    consecutiveRelayDeliveryFailures = 0;
+                    nextRelayDeliveryAttemptUtc = DateTime.MinValue;
+                }
+
                 return;
             }
 
-            if (!MiniMcpRelayService.TryNotifyAwaitedOperationCompletion(payloadJson, out var operationId))
+            lock (Gate)
             {
-                return;
+                if (isRelayDeliveryInFlight)
+                {
+                    return;
+                }
+
+                isRelayDeliveryInFlight = true;
             }
 
-            MarkCompletionDelivered(operationId);
+            var relayPort = MiniMcpRelayService.RelayPort;
+
+            ThreadPool.QueueUserWorkItem(_ =>
+            {
+                var notified = MiniMcpRelayService.TryNotifyAwaitedOperationCompletion(relayPort, payloadJson, out var operationId);
+
+                lock (Gate)
+                {
+                    isRelayDeliveryInFlight = false;
+
+                    if (notified)
+                    {
+                        deliveredOperationIdPendingCommit = operationId;
+                        consecutiveRelayDeliveryFailures = 0;
+                        nextRelayDeliveryAttemptUtc = DateTime.MinValue;
+                        return;
+                    }
+
+                    consecutiveRelayDeliveryFailures++;
+                    nextRelayDeliveryAttemptUtc = DateTime.UtcNow.AddSeconds(GetRelayRetryDelaySeconds(consecutiveRelayDeliveryFailures));
+                }
+            });
+        }
+
+        private static double GetRelayRetryDelaySeconds(int failureCount)
+        {
+            if (failureCount <= 0)
+            {
+                return 0;
+            }
+
+            var exponent = Math.Min(failureCount - 1, 5);
+            var delaySeconds = InitialRelayRetryDelaySeconds * Math.Pow(2.0d, exponent);
+            return Math.Min(delaySeconds, MaxRelayRetryDelaySeconds);
         }
 
         private static StoreData LoadStoreUnderLock()
