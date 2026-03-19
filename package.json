@@ -1,0 +1,22 @@
+{
+  "name": "com.vwgamedev.mini-mcp",
+  "version": "0.9.0",
+  "displayName": "Mini MCP",
+  "description": "This is a minimal implementation of a MCP Server for unity with an additional Kanban board for task management.",
+  "unity": "6000.3",
+  "unityRelease": "9f1",
+  "documentationUrl": "https://vwgamedev.com/mini-mcp/docs",
+  "changelogUrl": "https://vwgamedev.com/mini-mcp/changelog",
+  "licensesUrl": "https://vwgamedev.com/mini-mcp/licensing",
+ "keywords": [
+    "AI",
+    "MCP",
+    "Kanban"
+  ],
+  "author": {
+    "name": "Valentin Winkelmann",
+    "email": "info@vwgamedev.com",
+    "url": "https://www.vwgamedev.com"
+  }
+}
+

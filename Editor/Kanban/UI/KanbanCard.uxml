@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Kanban/UI/KanbanBoard.uss?fileID=7433441132597879392&amp;guid=fc874d76be8c73d4d87d4f0303533a1a&amp;type=3#KanbanBoard"/>
+    <ui:VisualElement name="CardRoot" class="mini-mcp-kanban-card">
+        <ui:VisualElement name="Colorbar" class="mini-mcp-kanban-card__colorbar" style="display: none; background-color: rgb(255, 157, 78);"/>
+        <ui:VisualElement class="mini-mcp-kanban-card__header" style="justify-content: space-between;">
+            <ui:VisualElement name="CardDragHandle" class="mini-mcp-kanban-card__drag-handle">
+                <ui:VisualElement name="DragIconContainer" class="mini-mcp-kanban-card__drag-handle-icon-container" style="flex-shrink: 0;">
+                    <ui:Label text="="/>
+                </ui:VisualElement>
+                <ui:Label name="CardTitleLabel" text="Title" class="mini-mcp-kanban-card__title" style="-unity-font-style: bold; font-size: 12px; flex-grow: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; flex-shrink: 1;"/>
+                <ui:VisualElement style="flex-grow: 1; flex-shrink: 0; flex-direction: row-reverse;">
+                    <ui:Label name="CardCategoryLabel" text="Category" class="mini-mcp-kanban-card__category" style="display: none; flex-grow: 0;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button text="" name="LockCardButton" class="mini-mcp-kanban-card__lock-icon-container">
+                <ui:Image source="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Gizmos/prohibited.png?fileID=2800000&amp;guid=b4b3c7796064b2142b2a10aae3db5464&amp;type=3#prohibited"/>
+            </ui:Button>
+            <ui:Button name="RemoveCardButton" text="" class="mini-mcp-kanban-card__delete">
+                <ui:Image source="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Gizmos/delete.png?fileID=2800000&amp;guid=976b83910c4735a439a374858ff082f6&amp;type=3#delete"/>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="CardBodyContainer" class="mini-mcp-kanban-card__body">
+            <ui:VisualElement name="CardBadgeContainer" class="mini-mcp-kanban-card__badges"/>
+            <ui:Label name="CardDescriptionLabel" text="Description preview" class="mini-mcp-kanban-card__description" style="white-space: pre-wrap;"/>
+            <ui:VisualElement name="CardFooter" class="mini-mcp-kanban-card__footer" style="flex-grow: 1;">
+                <ui:VisualElement name="Comments" class="mini-mcp-kanban-card__footer-comments" style="flex-grow: 0;">
+                    <ui:Image source="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Gizmos/comment.png?fileID=21300000&amp;guid=6c8ab4301a7e46e4a92aff0986cbef22&amp;type=3#comment" tint-color="rgb(151, 159, 173)">
+                        <ui:VisualElement name="UnreadBadge" class="mini-mcp-kanban-card__footer-comments-badge" style="flex-grow: 1;">
+                            <ui:Label name="CommentCountLabel" text="2" style="-unity-text-align: middle-center;"/>
+                        </ui:VisualElement>
+                    </ui:Image>
+                </ui:VisualElement>
+                <ui:VisualElement name="CreatedBy" class="mini-mcp-kanban-card__footer-createdby">
+                    <ui:VisualElement class="mini-mcp-kanban-card__footer-createdby-initials">
+                        <ui:Label name="CreatedByInitialsLabel" text="JD" style="-unity-text-align: middle-center; flex-grow: 1;"/>
+                    </ui:VisualElement>
+                    <ui:Label name="CreatedByNameLabel" text="John Doe"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

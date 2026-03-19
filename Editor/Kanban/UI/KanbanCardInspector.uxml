@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Kanban/UI/KanbanCardInspector.uss?fileID=7433441132597879392&amp;guid=32e6a9c109934a847b6afe2b124c62ed&amp;type=3#KanbanCardInspector"/>
+    <ui:VisualElement name="CardInspectorRoot" class="mini-mcp-kanban-card-inspector">
+        <ui:VisualElement class="mini-mcp-kanban-card-inspector__panel mini-mcp-kanban-card-inspector__panel--header">
+            <ui:Label name="CardInspectorTitleLabel" text="Kanban Card" class="mini-mcp-kanban-card-inspector__title"/>
+            <ui:Label name="CardInspectorSubtitleLabel" text="Plan | Todo" class="mini-mcp-kanban-card-inspector__subtitle"/>
+            <ui:VisualElement name="CardInspectorLockedHelpBoxHost"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="CardInspectorDetailsContainer" class="mini-mcp-kanban-card-inspector__panel">
+            <ui:Label text="Details" class="mini-mcp-kanban-card-inspector__section-title"/>
+            <ui:TextField name="CardInspectorTitleField" label="" class="mini-mcp-kanban-card-inspector__field"/>
+            <ui:VisualElement name="CardInspectorStatusFieldHost" class="mini-mcp-kanban-card-inspector__field-host"/>
+            <ui:VisualElement name="CardInspectorCategoryFieldHost" class="mini-mcp-kanban-card-inspector__field-host"/>
+            <ui:VisualElement name="CardInspectorTagSelectionContainer" class="mini-mcp-kanban-card-inspector__tag-selection"/>
+            <ui:TextField name="CardInspectorDescriptionField" label="" multiline="true" value="" class="mini-mcp-kanban-card-inspector__description" style="white-space: pre-wrap;"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="mini-mcp-kanban-card-inspector__panel">
+            <ui:Label text="Comments" class="mini-mcp-kanban-card-inspector__section-title"/>
+            <ui:VisualElement name="CardInspectorCommentsContainer" class="mini-mcp-kanban-card-inspector__comments" style="white-space: pre-wrap;"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="mini-mcp-kanban-card-inspector__panel">
+            <ui:Label text="Add Comment" class="mini-mcp-kanban-card-inspector__section-title"/>
+            <ui:TextField name="CardInspectorNewCommentField" multiline="true" class="mini-mcp-kanban-card-inspector__new-comment" style="white-space: pre-wrap;"/>
+            <ui:Button name="CardInspectorAddCommentButton" text="Add Comment" class="mini-mcp-kanban-card-inspector__button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Kanban/UI/KanbanBoard.uss?fileID=7433441132597879392&amp;guid=fc874d76be8c73d4d87d4f0303533a1a&amp;type=3#KanbanBoard"/>
+    <ui:VisualElement name="ColumnRoot" class="mini-mcp-kanban-column">
+        <ui:VisualElement class="mini-mcp-kanban-column__header">
+            <ui:Label name="ColumnTitleLabel" text="Column" class="mini-mcp-kanban-column__title"/>
+            <ui:VisualElement class="mini-mcp-kanban-column__actions">
+                <ui:Button name="AddCardButton" text="Add Card" class="mini-mcp-kanban-column__button"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label name="CardCountLabel" text="0 cards" class="mini-mcp-kanban-column__count"/>
+        <ui:ScrollView name="CardsScrollView" mode="Vertical" class="mini-mcp-kanban-column__cards-scroll"/>
+    </ui:VisualElement>
+</ui:UXML>

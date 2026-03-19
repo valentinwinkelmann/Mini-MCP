@@ -1,0 +1,216 @@
+.mini-mcp-kanban-card-inspector {
+    padding-top: 8px;
+    padding-right: 2px;
+    padding-bottom: 8px;
+    padding-left: 2px;
+}
+
+.mini-mcp-kanban-card-inspector__panel {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-right-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    border-left-color: rgba(255, 255, 255, 0.08);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.mini-mcp-kanban-card-inspector__title {
+    font-size: 15px;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+
+.mini-mcp-kanban-card-inspector__subtitle {
+    font-size: 11px;
+    color: rgb(160, 170, 184);
+    margin-bottom: 8px;
+}
+
+.mini-mcp-kanban-card-inspector__lock-help {
+    margin-top: 6px;
+}
+
+.mini-mcp-kanban-card-inspector__section-title {
+    margin-bottom: 8px;
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+.mini-mcp-kanban-card-inspector__field,
+.mini-mcp-kanban-card-inspector__field-host,
+.mini-mcp-kanban-card-inspector__tag-selection,
+.mini-mcp-kanban-card-inspector__description,
+.mini-mcp-kanban-card-inspector__new-comment {
+    margin-bottom: 8px;
+}
+
+.mini-mcp-kanban-card-inspector__tag-selection {
+    flex-direction: column;
+}
+
+.mini-mcp-kanban-card-inspector__tag-selection-header {
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: rgb(160, 170, 184);
+}
+
+.mini-mcp-kanban-card-inspector__tag-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.mini-mcp-kanban-card-inspector__tag-add-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.mini-mcp-kanban-card-inspector__tag-add-field {
+    flex-grow: 1;
+}
+
+.mini-mcp-kanban-card-inspector__tag-chip {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    min-height: 24px;
+    padding-left: 8px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.mini-mcp-kanban-card-inspector__tag-chip-label {
+    -unity-font-style: bold;
+    margin-right: 4px;
+}
+
+.mini-mcp-kanban-card-inspector__tag-chip-remove {
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+    margin-left: 0;
+    padding: 0;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+.mini-mcp-kanban-card-inspector__description {
+    min-height: 130px;
+}
+
+.mini-mcp-kanban-card-inspector__comments {
+    flex-direction: column;
+}
+
+.mini-mcp-kanban-card-inspector__comment {
+    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.mini-mcp-kanban-card-inspector__comment--own {
+    align-self: flex-end;
+    background-color: rgba(75, 133, 212, 0.12);
+}
+
+.mini-mcp-kanban-card-inspector__comment--foreign {
+    align-self: flex-start;
+}
+
+.mini-mcp-kanban-card-inspector__comment--mcp {
+    align-self: flex-start;
+    background-color: rgba(75, 207, 235, 0.12);
+}
+
+.mini-mcp-kanban-card-inspector__comment-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.mini-mcp-kanban-card-inspector__comment-meta {
+    flex-direction: column;
+}
+
+.mini-mcp-kanban-card-inspector__comment-author {
+    font-size: 11px;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+
+.mini-mcp-kanban-card-inspector__comment-time {
+    font-size: 10px;
+    color: rgb(160, 170, 184);
+}
+
+.mini-mcp-kanban-card-inspector__comment-delete {
+    min-width: 64px;
+    height: 22px;
+}
+
+.mini-mcp-kanban-card-inspector__comment-text {
+    min-height: 30px;
+    color: rgb(214, 218, 224);
+}
+
+.mini-mcp-kanban-card-inspector__comment-read-state {
+    align-self: flex-end;
+    margin-top: 6px;
+    padding-top: 2px;
+    padding-right: 6px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    font-size: 10px;
+    color: rgb(168, 178, 191);
+    background-color: rgba(255, 255, 255, 0.06);
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
+
+.mini-mcp-kanban-card-inspector__empty-state {
+    color: rgb(160, 170, 184);
+}
+
+.mini-mcp-kanban-card-inspector__new-comment {
+    min-height: 90px;
+}
+
+.mini-mcp-kanban-card-inspector__button {
+    align-self: flex-end;
+    min-width: 120px;
+}

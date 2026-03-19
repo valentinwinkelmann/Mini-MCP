@@ -1,0 +1,160 @@
+.mini-mcp-window {
+    flex-grow: 1;
+    padding: 12px;
+    background-color: rgb(37, 37, 38);
+    color: rgb(221, 221, 221);
+}
+
+.mini-mcp-window__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.mini-mcp-window__title {
+    font-size: 17px;
+    -unity-font-style: bold;
+    color: rgb(244, 244, 244);
+}
+
+.mini-mcp-window__notice {
+    font-size: 11px;
+    color: rgb(150, 184, 255);
+    unity-text-align: middle-right;
+}
+
+.mini-mcp-window__actions {
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.mini-mcp-window__button {
+    margin-right: 8px;
+    min-width: 120px;
+    height: 28px;
+}
+
+.mini-mcp-window__button--primary {
+    -unity-font-style: bold;
+}
+
+.mini-mcp-window__settings-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-right-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.mini-mcp-window__settings-grid > * {
+    width: 49%;
+    min-width: 220px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.mini-mcp-window__status-panel {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-right-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.mini-mcp-window__status-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.mini-mcp-window__status-label {
+    color: rgb(168, 168, 168);
+    min-width: 130px;
+}
+
+.mini-mcp-window__status-value {
+    flex-grow: 1;
+    unity-text-align: middle-right;
+    color: rgb(236, 236, 236);
+}
+
+.mini-mcp-window__tools-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.mini-mcp-window__section-title {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgb(244, 244, 244);
+}
+
+.mini-mcp-window__section-meta {
+    font-size: 11px;
+    color: rgb(168, 168, 168);
+}
+
+.mini-mcp-window__tool-scroll {
+    flex-grow: 1;
+    min-height: 220px;
+}
+
+.mini-mcp-window__tool-list {
+    flex-direction: column;
+}
+
+.mini-mcp-window__tool-item {
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-right-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.mini-mcp-window__tool-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.mini-mcp-window__tool-name {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgb(239, 239, 239);
+}
+
+.mini-mcp-window__tool-type {
+    font-size: 10px;
+    color: rgb(149, 149, 149);
+    margin-bottom: 4px;
+}
+
+.mini-mcp-window__tool-description {
+    font-size: 11px;
+    color: rgb(196, 196, 196);
+    white-space: normal;
+}

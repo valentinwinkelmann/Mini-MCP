@@ -1,0 +1,59 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="WindowRoot" class="mini-mcp-window">
+        <ui:VisualElement class="mini-mcp-window__header">
+            <ui:Label text="MiniMCP" class="mini-mcp-window__title" />
+            <ui:Label name="NoticeLabel" class="mini-mcp-window__notice" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="mini-mcp-window__actions">
+            <ui:Button name="StartButton" text="Start MiniMCP" class="mini-mcp-window__button mini-mcp-window__button--primary" />
+            <ui:Button name="StopButton" text="Stop MiniMCP" class="mini-mcp-window__button" />
+            <ui:Button name="RefreshToolsButton" text="Refresh Tool Scan" class="mini-mcp-window__button" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="mini-mcp-window__settings-grid">
+            <ui:IntegerField name="PortField" label="Port" />
+            <ui:IntegerField name="RelayPortField" label="Relay Port" />
+            <ui:Toggle name="ConsoleLogsToggle" label="Console Logs" />
+            <ui:Toggle name="PublicRelayEnabledToggle" label="Enable Public Relay" />
+            <ui:IntegerField name="PublicRelayPortField" label="Public Upstream Port" />
+            <ui:TextField name="PublicRelaySecretField" label="Upstream Secret" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="mini-mcp-window__status-panel">
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Unity Backend" class="mini-mcp-window__status-label" />
+                <ui:Label name="BackendStatusValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Relay" class="mini-mcp-window__status-label" />
+                <ui:Label name="RelayStatusValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Relay Endpoint" class="mini-mcp-window__status-label" />
+                <ui:Label name="RelayEndpointValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Relay Target" class="mini-mcp-window__status-label" />
+                <ui:Label name="RelayTargetValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Backend Endpoint" class="mini-mcp-window__status-label" />
+                <ui:Label name="BackendEndpointValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-mcp-window__status-row">
+                <ui:Label text="Public Upstream" class="mini-mcp-window__status-label" />
+                <ui:Label name="PublicUpstreamValue" class="mini-mcp-window__status-value" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="mini-mcp-window__tools-header">
+            <ui:Label text="Registered Tools" class="mini-mcp-window__section-title" />
+            <ui:Label name="ToolCountLabel" class="mini-mcp-window__section-meta" />
+        </ui:VisualElement>
+
+        <ui:ScrollView name="ToolListScrollView" class="mini-mcp-window__tool-scroll" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden">
+            <ui:VisualElement name="ToolListContainer" class="mini-mcp-window__tool-list" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

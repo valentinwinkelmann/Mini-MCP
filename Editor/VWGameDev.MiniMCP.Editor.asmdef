@@ -1,0 +1,20 @@
+{
+  "name": "VWGameDev.MiniMCP.Editor",
+  "rootNamespace": "",
+  "references": [
+    "VWGameDev.MiniMCP.Runtime",
+    "UnityEditor.TestRunner",
+    "UnityEngine.TestRunner"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

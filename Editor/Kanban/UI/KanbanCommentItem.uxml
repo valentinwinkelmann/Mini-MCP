@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="CommentItemRoot" class="mini-mcp-kanban-card-inspector__comment">
+        <ui:VisualElement class="mini-mcp-kanban-card-inspector__comment-header">
+            <ui:VisualElement class="mini-mcp-kanban-card-inspector__comment-meta">
+                <ui:Label name="CommentAuthorLabel" text="Author" class="mini-mcp-kanban-card-inspector__comment-author"/>
+                <ui:Label name="CommentTimestampLabel" text="Comment" class="mini-mcp-kanban-card-inspector__comment-time"/>
+            </ui:VisualElement>
+            <ui:Button name="CommentDeleteButton" text="Delete" class="mini-mcp-kanban-card-inspector__comment-delete"/>
+        </ui:VisualElement>
+        <ui:Label name="CommentTextLabel" text="Comment Text" class="mini-mcp-kanban-card-inspector__comment-text" style="white-space: pre-wrap;"/>
+        <ui:Label name="CommentReadStateLabel" text="Read" class="mini-mcp-kanban-card-inspector__comment-read-state" style="display: none;"/>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Kanban/UI/KanbanBoard.uss?fileID=7433441132597879392&amp;guid=fc874d76be8c73d4d87d4f0303533a1a&amp;type=3#KanbanBoard"/>
+    <UnityEditor.UIElements.Toolbar name="BoardToolbar">
+        <UnityEditor.UIElements.ToolbarBreadcrumbs style="padding-left: 4px; padding-right: 4px;">
+            <ui:Label name="PlanNameLabel" text="Kanban Board" style="-unity-text-align: middle-left; -unity-font-style: bold; font-size: 13px;"/>
+        </UnityEditor.UIElements.ToolbarBreadcrumbs>
+        <UnityEditor.UIElements.ToolbarToggle label="" text="" value="false" name="UnreadToggle" class="mini-mcp-kanban-board__toolbar-comment-button">
+            <ui:Image source="project://database/Packages/com.vwgamedev.mini-mcp/Editor/Gizmos/comment.png?fileID=21300000&amp;guid=6c8ab4301a7e46e4a92aff0986cbef22&amp;type=3#comment"/>
+            <ui:VisualElement name="UnreadBadge" class="mini-mcp-kanban-board__toolbar-comment-button-unread" style="flex-grow: 1;">
+                <ui:Label text="2" name="UnreadCount" style="-unity-text-align: middle-center;"/>
+            </ui:VisualElement>
+        </UnityEditor.UIElements.ToolbarToggle>
+        <UnityEditor.UIElements.ToolbarSpacer style="flex-grow: 1;"/>
+        <UnityEditor.UIElements.ToolbarToggle name="ToolbarCollapseToggle" label="Collapse All" value="false" style="width: 96px;"/>
+        <UnityEditor.UIElements.ToolbarSearchField name="ToolbarSearchField" style="width: 200px;"/>
+    </UnityEditor.UIElements.Toolbar>
+    <ui:VisualElement name="BoardRoot" class="mini-mcp-kanban-board">
+        <ui:Label name="StatusLabel" text="" class="mini-mcp-kanban-board__status" style="display: none;"/>
+        <ui:ScrollView name="BoardScrollView" mode="Horizontal" horizontal-scroller-visibility="Auto" vertical-scroller-visibility="Hidden" class="mini-mcp-kanban-board__scroll"/>
+        <ui:VisualElement name="DragLayer" class="mini-mcp-kanban-board__drag-layer"/>
+    </ui:VisualElement>
+</ui:UXML>
